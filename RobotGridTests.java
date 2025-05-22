@@ -20,23 +20,23 @@ public class RobotGridTests {
         // Safe square: 99 * 99 = 9801, digit sum = 9 + 8 + 0 + 1 = 18 < 19
         Assert.assertTrue(robotGrid.isSafe(99, 99));
  
-        // Safe square: 100 * 100 = 10000, digit sum = 1 + 0 + 0 + 0 + 0 = 1 < 19
+        // Safe square: 100 * 100 = 10000, digit sum = 1 < 19
         Assert.assertTrue(robotGrid.isSafe(100, 100));
  
-        // Unsafe square: 123 * 456 = 56088, digit sum = 5 + 6 + 0 + 8 + 8 = 27 > 19
+        // Unsafe square: 123 * 456 = 56088, digit sum = 27 > 19
         Assert.assertFalse(robotGrid.isSafe(123, 456));
  
-        // Negative coordinates: -3 * 6 = -18, digit sum = 1 + 8 = 9 < 19
+        // Negative coordinates: -3 * 6 = -18, digit sum = 9 < 19
         Assert.assertTrue(robotGrid.isSafe(-3, 6));
  
-        // Edge case: 0 * 999 = 0, digit sum = 0 < 19
-        Assert.assertTrue(robotGrid.isSafe(0, 999));
+        // Edge case: 0 * 9999 = 0, digit sum = 0 < 19
+        Assert.assertTrue(robotGrid.isSafe(0, 9999));
  
-        // Out-of-bounds: x = 1000 is outside the grid limit
-        Assert.assertFalse(robotGrid.isSafe(1000, 0));
+        // Out-of-bounds: x = 10000 is outside the grid limit
+        Assert.assertFalse(robotGrid.isSafe(10000, 0));
  
-        // Out-of-bounds: y = -1000 is outside the grid limit
-        Assert.assertFalse(robotGrid.isSafe(0, -1000));
+        // Out-of-bounds: y = -10000 is outside the grid limit
+        Assert.assertFalse(robotGrid.isSafe(0, -10000));
     }
  
     @Test
@@ -62,10 +62,10 @@ public class RobotGridTests {
         Assert.assertTrue(steps > 0);
  
         // Out-of-bounds destination: should return -1
-        Assert.assertEquals(-1, robotGrid.shortestSafeJourney(0, 0, 1000, 1000));
+        Assert.assertEquals(-1, robotGrid.shortestSafeJourney(0, 0, 10000, 10000));
  
         // Unsafe start point: should return -1
-        Assert.assertEquals(-1, robotGrid.shortestSafeJourney(999, 999, 0, 0));
+        Assert.assertEquals(-1, robotGrid.shortestSafeJourney(9999, 9999, 0, 0));
  
         // Same start and end point: should return 0
         Assert.assertEquals(0, robotGrid.shortestSafeJourney(0, 0, 0, 0));
@@ -81,9 +81,9 @@ public class RobotGridTests {
         Assert.assertTrue(pathLength > 0 && pathLength <= 6);
  
         // Longest possible safe journey within bounds (only if both ends are safe)
-        if (robotGrid.isSafe(-999, -999) && robotGrid.isSafe(999, 999)) {
-            int longPath = robotGrid.shortestSafeJourney(-999, -999, 999, 999);
-            System.out.println("Path from (-999,-999) to (999,999): " + longPath);
+        if (robotGrid.isSafe(-9999, -9999) && robotGrid.isSafe(9999, 9999)) {
+            int longPath = robotGrid.shortestSafeJourney(-9999, -9999, 9999, 9999);
+            System.out.println("Path from (-9999,-9999) to (9999,9999): " + longPath);
             Assert.assertTrue(longPath > 0);
         }
     }
