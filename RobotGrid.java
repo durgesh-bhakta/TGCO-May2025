@@ -4,11 +4,11 @@ import java.util.Queue;
 import java.util.Set;
  
 /**
-* Main simulates a robot navigating a bounded 2D grid from -9999 to +9999.
+* RobotGrid simulates a robot navigating a bounded 2D grid from -9999 to +9999.
 * The robot can only move to "safe" squares, where the sum of the digits
 * of the product of the coordinates is less than 19.
 */
-public class Main {
+public class RobotGrid {
  
     private static final int MIN = -9999;
     private static final int MAX = 9999;
@@ -108,10 +108,10 @@ public class Main {
     }
  
     /**
-     * Main method to manually test the Main functionality.
+     * RobotGrid method to manually test the RobotGrid functionality.
      */
-    public static void main(String[] args) {
-        Main robot = new Main();
+    public static void RobotGrid(String[] args) {
+        RobotGrid robot = new RobotGrid();
  
         // Test isSafe
         System.out.println("Is (3, 4) safe? " + robot.isSafe(3, 4)); // Expected: true
