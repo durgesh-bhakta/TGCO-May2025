@@ -1,0 +1,22 @@
+Team Name: Team 9 (Java/Kotlin)
+Team Members: Rajendra Jena, Durgesh Bhakta
+ 
+Approach Summary:
+We simulate a robot navigating a 2D grid bounded between -999 and +999. The robot moves only to "safe" squares, where the digit sum of the product of coordinates is less than 19.
+ 
+Algorithm:
+- Used BFS for both:
+  - Exploring all reachable safe squares from (0,0)
+  - Finding the shortest safe path between two points
+ 
+Safety Logic:
+- isSafe(x, y) checks bounds and digit sum of the product
+- Grid boundaries are strictly enforced
+ 
+Optimizations:
+- HashSet ensures each cell is visited once
+- Coordinates stored as "x,y" strings for fast lookup
+ 
+Extras:
+- Realistic grid simulation with boundary checks
+- Fully modular and unit-tested using JUnit
