@@ -4,14 +4,14 @@ import java.util.Queue;
 import java.util.Set;
  
 /**
- * RobotGrid simulates a robot navigating a bounded 2D grid from -999 to +999.
- * The robot can only move to "safe" squares, where the sum of the digits
- * of the product of the coordinates is less than 19.
- */
-public class RobotGrid {
+* Main simulates a robot navigating a bounded 2D grid from -9999 to +9999.
+* The robot can only move to "safe" squares, where the sum of the digits
+* of the product of the coordinates is less than 19.
+*/
+public class Main {
  
-    private static final int MIN = -999;
-    private static final int MAX = 999;
+    private static final int MIN = -9999;
+    private static final int MAX = 9999;
  
     /**
      * Checks if a square at coordinates (x, y) is safe.
@@ -108,10 +108,10 @@ public class RobotGrid {
     }
  
     /**
-     * Main method to manually test the RobotGrid functionality.
+     * Main method to manually test the Main functionality.
      */
     public static void main(String[] args) {
-        RobotGrid robot = new RobotGrid();
+        Main robot = new Main();
  
         // Test isSafe
         System.out.println("Is (3, 4) safe? " + robot.isSafe(3, 4)); // Expected: true
@@ -125,11 +125,10 @@ public class RobotGrid {
         int journey1 = robot.shortestSafeJourney(0, 0, 2, 2);
         System.out.println("Shortest safe journey from (0,0) to (2,2): " + journey1);
  
-        int journey2 = robot.shortestSafeJourney(0, 0, 1000, 1000);
-        System.out.println("Shortest safe journey from (0,0) to (1000,1000): " + journey2); // Expected: -1
+        int journey2 = robot.shortestSafeJourney(0, 0, 10000, 10000);
+        System.out.println("Shortest safe journey from (0,0) to (10000,10000): " + journey2); // Expected: -1
  
         int journey3 = robot.shortestSafeJourney(0, 0, 0, 0);
         System.out.println("Shortest safe journey from (0,0) to (0,0): " + journey3); // Expected: 0
     }
 }
- 
