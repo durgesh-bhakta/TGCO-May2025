@@ -2,7 +2,7 @@ Team Name: Team 9 (Java/Kotlin)
 Team Members: Rajendra Jena, Durgesh Bhakta
  
 Approach Summary:
-We simulate a robot navigating a 2D grid bounded between -999 and +999. The robot moves only to "safe" squares, where the digit sum of the product of coordinates is less than 19.
+We simulate a robot navigating a 2D grid bounded between -9999 and +9999. The robot moves only to "safe" squares, where the digit sum of the product of coordinates is less than 19.
  
 Algorithm:
 - Used BFS for both:
